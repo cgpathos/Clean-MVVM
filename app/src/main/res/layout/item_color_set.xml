@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/color_chip_1"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:background="#ddcc20" />
+
+            <View
+                android:id="@+id/color_chip_2"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:background="#334400" />
+
+            <View
+                android:id="@+id/color_chip_3"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:background="#ddcc20" />
+
+            <View
+                android:id="@+id/color_chip_4"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:background="#334400" />
+
+            <View
+                android:id="@+id/color_chip_5"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:background="#ddcc20" />
+            
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_color_set_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/black_40"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="YELLOW" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
