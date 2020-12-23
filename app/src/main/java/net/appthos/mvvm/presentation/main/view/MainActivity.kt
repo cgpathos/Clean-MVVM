@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import net.appthos.mvvm.R
-import net.appthos.mvvm.core.extensions.toastIt
 import net.appthos.mvvm.databinding.ActivityMainBinding
 import net.appthos.mvvm.presentation.main.viewmodel.MainViewModel
 import net.appthos.mvvm.presentation.main.viewmodel.MainViewState
@@ -28,10 +27,11 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.viewState.observe(this, { transitionViewState(it) })
 
+        adapter = ColorSetAdapter()
+        bnd.listColorSet.layoutManager = LinearLayoutManager(this)
+        bnd.listColorSet.adapter = adapter
+
         if (null == savedInstanceState) {
-            adapter = ColorSetAdapter()
-            bnd.listColorSet.layoutManager = LinearLayoutManager(this)
-            bnd.listColorSet.adapter = adapter
             viewModel.fetchColorSetList()
         }
     }
