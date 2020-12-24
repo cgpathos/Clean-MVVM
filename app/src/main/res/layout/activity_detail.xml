@@ -6,15 +6,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.main.view.MainActivity">
+        tools:context=".presentation.detail.view.DetailActivity">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/list_color_set"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"
-            tools:listitem="@layout/item_color_set"
-            tools:visibility="visible" />
+            android:id="@+id/list_color_chip"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txt_error"

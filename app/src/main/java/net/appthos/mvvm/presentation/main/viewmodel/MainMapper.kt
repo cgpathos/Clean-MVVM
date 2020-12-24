@@ -4,9 +4,9 @@ import net.appthos.mvvm.core.extensions.safeColorHex
 import net.appthos.mvvm.core.presentation.Mapper
 import net.appthos.mvvm.model.entiities.ColorSet
 
-class ColorSetMapper : Mapper<ColorSet, ColorSetData>() {
-    override fun map(value: ColorSet): ColorSetData {
-        return ColorSetData(
+class MainMapper : Mapper<ColorSet, MainData>() {
+    override fun map(value: ColorSet): MainData {
+        return MainData(
             value.id,
             value.name ?: "",
             value.colorChips?.component1()?.color?.safeColorHex() ?: "",
@@ -17,7 +17,7 @@ class ColorSetMapper : Mapper<ColorSet, ColorSetData>() {
         )
     }
 
-    override fun reverseMap(value: ColorSetData): ColorSet {
+    override fun reverseMap(value: MainData): ColorSet {
         TODO("Not yet implemented")
     }
 }

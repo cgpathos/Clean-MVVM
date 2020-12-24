@@ -1,6 +1,6 @@
 package net.appthos.mvvm.presentation.main.viewmodel
 
-data class ColorSetData(
+data class MainData(
     val id: Long,
     val name: String,
     val colorChipColor1: String,

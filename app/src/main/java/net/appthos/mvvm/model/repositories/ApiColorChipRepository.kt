@@ -69,7 +69,7 @@ class ApiColorChipRepository : ColorChipRepository {
         ColorSet(
             4, "Purple", listOf(
                 ColorChip("violet", "#EE82EE"),
-                ColorChip("red coat", "#B81324"),
+                ColorChip("spicypink", "#FF1CAE"),
                 ColorChip("violet flower", "#BF5FFF"),
                 ColorChip("heart", "#6030A8"),
                 ColorChip("plum", "#DDA0DD"),

@@ -1,5 +1,6 @@
 package net.appthos.mvvm.presentation.main.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
@@ -8,8 +9,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import net.appthos.mvvm.R
 import net.appthos.mvvm.databinding.ActivityMainBinding
+import net.appthos.mvvm.presentation.detail.view.DetailActivity
+import net.appthos.mvvm.presentation.main.viewmodel.MainData
 import net.appthos.mvvm.presentation.main.viewmodel.MainViewModel
 import net.appthos.mvvm.presentation.main.viewmodel.MainViewState
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -30,6 +34,10 @@ class MainActivity : AppCompatActivity() {
         adapter = ColorSetAdapter()
         bnd.listColorSet.layoutManager = LinearLayoutManager(this)
         bnd.listColorSet.adapter = adapter
+
+        adapter.clickSubject
+            .throttleFirst(300, TimeUnit.MILLISECONDS)
+            .subscribe({ colorSet -> clickColorSetItem(colorSet) }, {})
 
         if (null == savedInstanceState) {
             viewModel.fetchColorSetList()
@@ -52,5 +60,12 @@ class MainActivity : AppCompatActivity() {
                 bnd.txtError.text = state.msg
             }
         }
+    }
+
+    private fun clickColorSetItem(colorSet: MainData) {
+        startActivity(
+            Intent(this, DetailActivity::class.java)
+                .putExtra("id", colorSet.id)
+        )
     }
 }

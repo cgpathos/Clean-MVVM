@@ -1,4 +1,4 @@
-package net.appthos.mvvm.presentation.main.viewmodel
+package net.appthos.mvvm.presentation.detail.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -8,16 +8,16 @@ import net.appthos.mvvm.core.presentation.BaseViewModel
 import net.appthos.mvvm.model.interactors.ColorChipInteractor
 import net.appthos.mvvm.model.repositories.ApiColorChipRepository
 
-class MainViewModel : BaseViewModel() {
+class DetailViewModel : BaseViewModel() {
     private val colorChipInteractor: ColorChipInteractor by lazy { ColorChipInteractor(ApiColorChipRepository()) }
-    internal val viewState = MutableLiveData<MainViewState>()
+    internal val viewState = MutableLiveData<DetailViewState>()
 
-    fun fetchColorSetList() {
-        colorChipInteractor.getColorSetList()
+    fun fetchColorSet(id: Long) {
+        colorChipInteractor.getColorSet(id)
             .toObservable()
-            .map<MainViewState> { MainViewState.Success(MainMapper().map(it)) }
-            .onErrorReturn { MainViewState.Error(it.message ?: "Unknown error!!") }
-            .startWithItem(MainViewState.Loading)
+            .map<DetailViewState> { DetailViewState.Success(DetailMapper().map(it)) }
+            .onErrorReturn { DetailViewState.Error(it.message ?: "Unknown error!!") }
+            .startWithItem(DetailViewState.Loading)
 
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

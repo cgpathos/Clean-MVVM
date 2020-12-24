@@ -4,12 +4,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import io.reactivex.rxjava3.subjects.PublishSubject
+import io.reactivex.rxjava3.subjects.Subject
 import net.appthos.mvvm.R
 import net.appthos.mvvm.databinding.ItemColorSetBinding
-import net.appthos.mvvm.presentation.main.viewmodel.ColorSetData
+import net.appthos.mvvm.presentation.main.viewmodel.MainData
 
 class ColorSetAdapter : RecyclerView.Adapter<ColorSetViewHolder>() {
-    var colorSetList: List<ColorSetData> = emptyList()
+    val clickSubject: Subject<MainData> = PublishSubject.create<MainData>().toSerialized()
+
+    var colorSetList: List<MainData> = emptyList()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -20,7 +24,7 @@ class ColorSetAdapter : RecyclerView.Adapter<ColorSetViewHolder>() {
             LayoutInflater.from(parent.context),
             R.layout.item_color_set, parent, false
         )
-        return ColorSetViewHolder(bnd)
+        return ColorSetViewHolder(bnd, clickSubject)
     }
 
     override fun onBindViewHolder(holder: ColorSetViewHolder, position: Int) {
