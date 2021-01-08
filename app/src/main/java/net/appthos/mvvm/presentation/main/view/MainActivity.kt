@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
 import net.appthos.mvvm.R
 import net.appthos.mvvm.databinding.ActivityMainBinding
 import net.appthos.mvvm.presentation.detail.view.DetailActivity
@@ -15,12 +16,13 @@ import net.appthos.mvvm.presentation.main.viewmodel.MainViewModel
 import net.appthos.mvvm.presentation.main.viewmodel.MainViewState
 import java.util.concurrent.TimeUnit
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     companion object {
         const val TAG = "MainActivity"
     }
 
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel by viewModels<MainViewModel>()
 
     private lateinit var bnd: ActivityMainBinding
     private lateinit var adapter: ColorSetAdapter
