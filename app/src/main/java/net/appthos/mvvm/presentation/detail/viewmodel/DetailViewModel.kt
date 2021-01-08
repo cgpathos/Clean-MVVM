@@ -1,15 +1,16 @@
 package net.appthos.mvvm.presentation.detail.viewmodel
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 import net.appthos.mvvm.core.extensions.addTo
 import net.appthos.mvvm.core.presentation.BaseViewModel
 import net.appthos.mvvm.model.interactors.ColorChipInteractor
-import net.appthos.mvvm.model.repositories.ApiColorChipRepository
 
-class DetailViewModel : BaseViewModel() {
-    private val colorChipInteractor: ColorChipInteractor by lazy { ColorChipInteractor(ApiColorChipRepository()) }
+class DetailViewModel @ViewModelInject constructor(
+    private val colorChipInteractor: ColorChipInteractor
+) : BaseViewModel() {
     internal val viewState = MutableLiveData<DetailViewState>()
 
     fun fetchColorSet(id: Long) {
