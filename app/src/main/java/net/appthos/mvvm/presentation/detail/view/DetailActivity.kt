@@ -7,12 +7,13 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
 import net.appthos.mvvm.R
 import net.appthos.mvvm.databinding.ActivityDetailBinding
 import net.appthos.mvvm.presentation.detail.viewmodel.DetailViewModel
 import net.appthos.mvvm.presentation.detail.viewmodel.DetailViewState
 
-
+@AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
     private val viewModel: DetailViewModel by viewModels()
 

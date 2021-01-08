@@ -6,12 +6,15 @@ import net.appthos.mvvm.model.entiities.ColorChip
 import net.appthos.mvvm.model.entiities.ColorSet
 import net.appthos.mvvm.model.interactors.ColorChipRepository
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
 import kotlin.random.Random
 
 /**
  * dummy api
  */
-class ApiColorChipRepository : ColorChipRepository {
+class ApiColorChipRepository @Inject constructor(
+
+) : ColorChipRepository {
     private val dummyItems = listOf(
         ColorSet(
             0, "Yellow", listOf(
