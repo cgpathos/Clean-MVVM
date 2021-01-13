@@ -1,13 +1,13 @@
 package net.appthos.mvvm.presentation.main.viewmodel
 
-import androidx.test.ext.junit.runners.AndroidJUnit4
-import org.junit.Assert.*
-import org.junit.runner.RunWith
+import dagger.hilt.android.testing.HiltAndroidTest
+import org.junit.Test
 
-@RunWith(AndroidJUnit4::class)
+@HiltAndroidTest
 class MainViewModelTest {
 
 
+    @Test
     fun testFetchColorSetList() {
 
     }
