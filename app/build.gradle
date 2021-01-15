@@ -14,7 +14,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "0.2.0"
-        testInstrumentationRunner "net.appthos.mvvm.core.MainTestRunner"
+        testInstrumentationRunner "net.appthos.mvvm.presentation.main.core.MainTestRunner"
 
         kapt {
             javacOptions {
@@ -76,6 +76,7 @@ dependencies {
 
     // Testing
     kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
+    androidTestImplementation "androidx.arch.core:core-testing:$core_testing_version"
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation "org.mockito:mockito-android:2.24.5"
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
