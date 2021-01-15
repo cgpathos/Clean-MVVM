@@ -1,5 +1,6 @@
 ext {
     kotlin_version = "1.4.21"
+    life_cycle_version = "2.2.0"
     hilt_version = "2.28.3-alpha"
     hilt_androidx_version = "1.0.0-alpha02"
     assisted_inject_version = "0.6.0"
