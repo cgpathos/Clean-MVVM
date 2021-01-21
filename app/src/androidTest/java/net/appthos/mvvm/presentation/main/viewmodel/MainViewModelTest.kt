@@ -11,6 +11,7 @@ import javax.inject.Inject
 import kotlin.jvm.Throws
 
 @HiltAndroidTest
+@Deprecated("JUnit test로 옮김 이건 그냥 샘플로 남겨두자")
 class MainViewModelTest {
     private lateinit var viewModel: MainViewModel
     private val hiltRule = HiltAndroidRule(this)
