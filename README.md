@@ -3,6 +3,8 @@
 
 ## 아키텍쳐 구조
 
+![architecture](readme_assets/architecture.jpg)
+
 ## 샘플앱 기획
 
 1. 컬러셋에 속하는 컬러칩들의 리스트를 보여줌.  
