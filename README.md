@@ -1,23 +1,17 @@
-# MVVM
+# Android Clean Architecture MVVM
 
 
 ## 아키텍쳐 구조
 
 ![architecture](readme_assets/architecture.jpg)
 
-## 샘플앱 기획
+- `data model`은 속한 레이어에 따라 달라짐(Table Entity, DTO, UI Model, etc)
+- `mapper`는 `Entity`를 `data model`로 변환해 주는 역할  
+    (필요한 경우 반대 경우도 구현)
+- `JVM`가 좀 어색하지만 테스트코드가 어디서 실행되는지로 구분하기 위해 `JVM`으로 표기
 
-1. 컬러셋에 속하는 컬러칩들의 리스트를 보여줌.  
-1. 컬러셋 리스트 화면과 컬러셋의 컬러칩들의 정보를 보여주는 상세화면으로 구성됨.
 
----
-
-> 두가지 관점에 layer를 설명하다보니 뒤섞인 형태로 설명함.  
-> 그래서 (관점), [플랫폼종속성]를 레이어 앞뒤에 표기함.
-
-## (MVVM)Model Layer
-
-### (CleanArchitecture)Domain Layer[PureJVM]
+### Domain Layer
 
 1. interactor, entity, repository로 구성.
 1. interactor는 비즈니스 로직이 구현되는 곳으로 repository를 생성시 전달 받음.
@@ -25,17 +19,13 @@
 1. entity는 단순히 비즈니스 로직에 사용되는 데이터를 정의한 data class.
 1. repository는 인터페이스 현태로 존재, interactor 생성시 구현체를 전달 받음.
 
-### (CleanArchitecture)Data Layer[Android]
+### Data Layer
 
-1. Domain Layer의 repository를 구현
-1. API서비스, DB, SharedPreference 등이 여기서 구현
-1. Entiity<->RepositoryEntity Mapper가 존재하면 여기에
+1. Domain Layer의 repository를 구현.
+1. 구현체에 따라 Android 또는 JVM 속함.
+1. API서비스, DB, SharedPreference 등이 여기서 구현.
 
----
-
-## (CleanArchitecture)Presentation Layer
-
-### (MVVM)ViewModel Layer
+### ViewModel Layer
 
 1. ViewModel, ViewState, ViewData, Mapper로 구성.
 1. AAC의 ViewModel 사용.
@@ -44,7 +34,7 @@
 1. ViewData는 UI에 사용할 data class.
 1. Mapper는 Entity<->ViewData로 변환을 담당.
 
-### (MVVM)View Layer
+### View Layer
 
 1. Activity/Fragment, CustomView, layout.xml등으로 구성.
 1. 일단은 Activity/Fragment가 View의 역할을 함.
@@ -55,7 +45,15 @@
 
 ---
 
-## 고민
+## 샘플앱 기획
+
+1. 컬러셋에 속하는 컬러칩들의 리스트를 보여줌.  
+1. 컬러셋 리스트 화면과 컬러셋의 컬러칩들의 정보를 보여주는 상세화면으로 구성됨.
+
+---
+
+## Todo?
 
 1. 서비스, 브로드케스트 리시버, 푸시 노티피케이션 받을떄 처리는 어떻게?
 1. RecyclerView ViewHolder는 어떻게 처리할까?
+1. 좀 더 풀어 쓴 글은 작성예정
