@@ -3,12 +3,13 @@ package net.appthos.mvvm.core.di
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.components.SingletonComponent
+
 import net.appthos.mvvm.model.interactors.ColorChipInteractor
 import net.appthos.mvvm.model.repositories.ApiColorChipRepository
 
 @Module
-@InstallIn(ApplicationComponent::class)
+@InstallIn(SingletonComponent::class)
 object InteractorModule {
 
     @Provides

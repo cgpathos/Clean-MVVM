@@ -13,7 +13,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
-        versionName "0.2.0"
+        versionName "0.3.0"
         testInstrumentationRunner "net.appthos.mvvm.presentation.main.core.MainTestRunner"
 
         kapt {
@@ -61,6 +61,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$life_cycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$life_cycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$life_cycle_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
 
     // RxJava
     implementation "io.reactivex.rxjava3:rxjava:3.0.8"
@@ -87,5 +90,6 @@ dependencies {
     testImplementation 'junit:junit:4.13.1'
     testImplementation 'org.mockito:mockito-inline:2.24.5'
     testImplementation "androidx.arch.core:core-testing:$core_testing_version"
+    testImplementation "androidx.room:room-testing:$room_version"
 
 }
