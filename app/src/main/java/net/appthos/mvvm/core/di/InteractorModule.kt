@@ -5,8 +5,8 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 
-import net.appthos.mvvm.model.interactors.ColorChipInteractor
-import net.appthos.mvvm.model.repositories.ApiColorChipRepository
+import net.appthos.mvvm.domain.interactors.ColorChipInteractor
+import net.appthos.mvvm.data.remote.ApiColorChipRepository
 
 @Module
 @InstallIn(SingletonComponent::class)

@@ -6,7 +6,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 import net.appthos.mvvm.core.extensions.addTo
 import net.appthos.mvvm.core.presentation.BaseViewModel
-import net.appthos.mvvm.model.interactors.ColorChipInteractor
+import net.appthos.mvvm.domain.interactors.ColorChipInteractor
 import javax.inject.Inject
 
 @HiltViewModel

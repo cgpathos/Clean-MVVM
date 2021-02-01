@@ -1,10 +1,10 @@
-package net.appthos.mvvm.model.repositories
+package net.appthos.mvvm.data.remote
 
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
-import net.appthos.mvvm.model.entiities.ColorChip
-import net.appthos.mvvm.model.entiities.ColorSet
-import net.appthos.mvvm.model.interactors.ColorChipRepository
+import net.appthos.mvvm.domain.entiities.ColorChip
+import net.appthos.mvvm.domain.entiities.ColorSet
+import net.appthos.mvvm.domain.interactors.ColorChipRepository
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 import kotlin.random.Random
