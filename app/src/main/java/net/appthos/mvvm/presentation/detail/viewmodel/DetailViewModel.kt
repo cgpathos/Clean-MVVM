@@ -1,14 +1,16 @@
 package net.appthos.mvvm.presentation.detail.viewmodel
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
+import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 import net.appthos.mvvm.core.extensions.addTo
 import net.appthos.mvvm.core.presentation.BaseViewModel
 import net.appthos.mvvm.model.interactors.ColorChipInteractor
+import javax.inject.Inject
 
-class DetailViewModel @ViewModelInject constructor(
+@HiltViewModel
+class DetailViewModel @Inject constructor(
     private val colorChipInteractor: ColorChipInteractor
 ) : BaseViewModel() {
     internal val viewState = MutableLiveData<DetailViewState>()
