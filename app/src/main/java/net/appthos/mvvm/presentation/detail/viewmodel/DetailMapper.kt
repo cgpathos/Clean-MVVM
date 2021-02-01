@@ -1,10 +1,11 @@
 package net.appthos.mvvm.presentation.detail.viewmodel
 
 import net.appthos.mvvm.core.extensions.safeColorHex
-import net.appthos.mvvm.core.presentation.Mapper
+import net.appthos.mvvm.domain.Mapper
 import net.appthos.mvvm.domain.entiities.ColorSet
+import javax.inject.Inject
 
-class DetailMapper : Mapper<ColorSet, DetailData>() {
+class DetailMapper @Inject constructor() : Mapper<ColorSet, DetailData>() {
     override fun map(value: ColorSet): DetailData {
         val colorChipList = ArrayList<ColorChipData>()
 

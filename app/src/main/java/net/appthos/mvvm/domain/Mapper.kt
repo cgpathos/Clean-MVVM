@@ -1,4 +1,4 @@
-package net.appthos.mvvm.core.presentation
+package net.appthos.mvvm.domain
 
 abstract class Mapper<T1, T2> {
     abstract fun map(value: T1): T2
