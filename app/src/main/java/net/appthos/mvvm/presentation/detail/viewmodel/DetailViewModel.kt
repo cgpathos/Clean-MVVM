@@ -11,14 +11,15 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DetailViewModel @Inject constructor(
-    private val colorChipInteractor: ColorChipInteractor
+    private val colorChipInteractor: ColorChipInteractor,
+    private val detailMapper: DetailMapper
 ) : BaseViewModel() {
     internal val viewState = MutableLiveData<DetailViewState>()
 
     fun fetchColorSet(id: Long) {
         colorChipInteractor.getColorSet(id)
             .toObservable()
-            .map<DetailViewState> { DetailViewState.Success(DetailMapper().map(it)) }
+            .map<DetailViewState> { DetailViewState.Success(detailMapper.map(it)) }
             .onErrorReturn { DetailViewState.Error(it.message ?: "Unknown error!!") }
             .startWithItem(DetailViewState.Loading)
 

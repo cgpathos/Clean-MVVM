@@ -1,10 +1,11 @@
 package net.appthos.mvvm.presentation.main.viewmodel
 
 import net.appthos.mvvm.core.extensions.safeColorHex
-import net.appthos.mvvm.core.presentation.Mapper
+import net.appthos.mvvm.domain.Mapper
 import net.appthos.mvvm.domain.entiities.ColorSet
+import javax.inject.Inject
 
-class MainMapper : Mapper<ColorSet, MainData>() {
+class MainMapper @Inject constructor() : Mapper<ColorSet, MainData>() {
     override fun map(value: ColorSet): MainData {
         return MainData(
             value.id,

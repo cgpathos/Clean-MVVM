@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import net.appthos.mvvm.data.local.db.DBColorChipRepository
 
 import net.appthos.mvvm.domain.interactors.ColorChipInteractor
 import net.appthos.mvvm.data.remote.ApiColorChipRepository
@@ -13,5 +14,5 @@ import net.appthos.mvvm.data.remote.ApiColorChipRepository
 object InteractorModule {
 
     @Provides
-    fun provideColorChipInteractor(repository: ApiColorChipRepository) = ColorChipInteractor(repository)
+    fun provideColorChipInteractor(repository: DBColorChipRepository) = ColorChipInteractor(repository)
 }
