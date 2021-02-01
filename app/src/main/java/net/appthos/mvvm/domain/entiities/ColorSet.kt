@@ -1,4 +1,4 @@
-package net.appthos.mvvm.model.entiities
+package net.appthos.mvvm.domain.entiities
 
 data class ColorSet(
     val id: Long,

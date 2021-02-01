@@ -2,7 +2,7 @@ package net.appthos.mvvm.presentation.detail.viewmodel
 
 import net.appthos.mvvm.core.extensions.safeColorHex
 import net.appthos.mvvm.core.presentation.Mapper
-import net.appthos.mvvm.model.entiities.ColorSet
+import net.appthos.mvvm.domain.entiities.ColorSet
 
 class DetailMapper : Mapper<ColorSet, DetailData>() {
     override fun map(value: ColorSet): DetailData {

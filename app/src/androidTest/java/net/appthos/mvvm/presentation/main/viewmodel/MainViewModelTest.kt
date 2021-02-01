@@ -3,12 +3,11 @@ package net.appthos.mvvm.presentation.main.viewmodel
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
-import net.appthos.mvvm.model.interactors.ColorChipInteractor
+import net.appthos.mvvm.domain.interactors.ColorChipInteractor
 import net.appthos.mvvm.presentation.main.core.getValue
 import org.junit.*
 import org.junit.rules.RuleChain
 import javax.inject.Inject
-import kotlin.jvm.Throws
 
 @HiltAndroidTest
 @Deprecated("JUnit test로 옮김 이건 그냥 샘플로 남겨두자")

@@ -7,7 +7,7 @@ import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.Observer
 import io.reactivex.rxjava3.core.Single
 import net.appthos.mvvm.core.rx.RxSchedulerRule
-import net.appthos.mvvm.model.interactors.ColorChipInteractor
+import net.appthos.mvvm.domain.interactors.ColorChipInteractor
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

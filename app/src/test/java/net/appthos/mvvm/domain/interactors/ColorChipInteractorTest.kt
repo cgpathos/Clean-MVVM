@@ -1,9 +1,9 @@
-package net.appthos.mvvm.model.interactors
+package net.appthos.mvvm.domain.interactors
 
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.observers.TestObserver
-import net.appthos.mvvm.model.entiities.ColorChip
-import net.appthos.mvvm.model.entiities.ColorSet
+import net.appthos.mvvm.domain.entiities.ColorChip
+import net.appthos.mvvm.domain.entiities.ColorSet
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.core.Is.`is`
 import org.junit.Before
