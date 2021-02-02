@@ -5,5 +5,6 @@ import androidx.room.RoomDatabase
 
 @Database(entities = [ColorSetTable::class, ColorChipTable::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun colorChipDao(): ColorSetDao
+    abstract fun colorSetDao(): ColorSetDao
+    abstract fun colorChipDao(): ColorChipDao
 }

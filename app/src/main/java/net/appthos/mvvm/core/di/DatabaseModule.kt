@@ -9,6 +9,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import net.appthos.mvvm.core.DATABASE_NAME
 import net.appthos.mvvm.data.local.db.AppDatabase
+import net.appthos.mvvm.data.local.db.ColorChipDao
 import net.appthos.mvvm.data.local.db.ColorSetDao
 import javax.inject.Singleton
 
@@ -27,6 +28,9 @@ class DatabaseModule {
 
     @Provides
     fun provideColorSetDao(appDatabase: AppDatabase): ColorSetDao {
-        return appDatabase.colorChipDao()
+        return appDatabase.colorSetDao()
     }
+
+    @Provides
+    fun provideColorChipDao(appDatabase: AppDatabase): ColorChipDao = appDatabase.colorChipDao()
 }

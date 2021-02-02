@@ -7,7 +7,7 @@ data class ColorSetWithColorChips(
     @Embedded val colorSet: ColorSetTable,
     @Relation(
         parentColumn = "id",
-        entityColumn = "colorSetId"
+        entityColumn = "color_set_id"
     )
     val colorChipList: List<ColorChipTable>,
 )
