@@ -21,9 +21,8 @@ class DatabaseModule {
     @Provides
     fun provideAppDatabase(@ApplicationContext context: Context): AppDatabase {
         return Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME)
+            .createFromAsset("colorChip-db")
             .build()
-
-        // todo : 샘플 데이터 초기화 구현
     }
 
     @Provides
