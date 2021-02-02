@@ -30,7 +30,7 @@ class MainViewModelUnitTest {
     @Before
     fun setUp() {
         lifecycle = LifecycleRegistry(lifecycleOwner)
-        viewModel = MainViewModel(interactor)
+        viewModel = MainViewModel(interactor, MainMapper())
         viewModel.viewState.observeForever(observer)
     }
 

@@ -1,13 +1,17 @@
 package net.appthos.mvvm.data.local.db
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.*
 
-@Entity(tableName = "COLOR_CHIP")
+@Entity(
+    tableName = "COLOR_CHIP",
+    foreignKeys = [
+        ForeignKey(entity = ColorSetTable::class, parentColumns = ["id"], childColumns = ["color_set_id"])
+    ],
+    indices = [Index("color_set_id")]
+)
 data class ColorChipTable(
-    @PrimaryKey val uid: Long,
-    val colorSetId: Long,
+    @PrimaryKey(autoGenerate = true) val id: Long,
+    @ColumnInfo(name = "color_set_id") val colorSetId: Long,
     val name: String?,
     @ColumnInfo(name = "color_hex") val color: String?
 )

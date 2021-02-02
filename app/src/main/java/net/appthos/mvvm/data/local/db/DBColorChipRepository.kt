@@ -10,12 +10,12 @@ class DBColorChipRepository @Inject constructor(
     private val colorSetMapper: ColorSetMapper
 ) : ColorChipRepository {
     override fun getColorSetList(): Single<List<ColorSet>> {
-        return colorSetDao.getColorSetList()
+        return colorSetDao.getColorSetWithColorChipsList()
             .map { colorSetMapper.map(it) }
     }
 
     override fun getColorSet(id: Long): Single<ColorSet> {
-        return colorSetDao.getColorSet(id)
+        return colorSetDao.getColorSetById(id)
             .map { colorSetMapper.map(it) }
     }
 }

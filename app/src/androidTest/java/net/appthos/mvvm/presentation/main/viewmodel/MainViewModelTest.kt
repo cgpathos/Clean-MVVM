@@ -22,12 +22,13 @@ class MainViewModelTest {
         .around(instantTaskExecutorRule)
 
     @Inject lateinit var colorChipInteractor: ColorChipInteractor
+    @Inject lateinit var mainMapper: MainMapper
 
     @Before
     fun setUp() {
         hiltRule.inject()
 
-        viewModel = MainViewModel(colorChipInteractor)
+        viewModel = MainViewModel(colorChipInteractor, mainMapper)
     }
 
     @Test
