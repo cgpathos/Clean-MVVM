@@ -6,9 +6,9 @@
 ![architecture](readme_assets/architecture.jpg)
 
 - `data model`은 속한 레이어에 따라 달라짐(Table Entity, DTO, UI Model, etc)
-- `mapper`는 `Entity`를 `data model`로 변환해 주는 역할  
+- `mapper`는 레이어간 `data model`을 변환하는 역할 
     (필요한 경우 반대 경우도 구현)
-- `JVM`가 좀 어색하지만 테스트코드가 어디서 실행되는지로 구분하기 위해 `JVM`으로 표기
+- 플랫폼 의존여부에 따라 `Android`, `Java`로 구분
 
 
 ### Domain Layer
