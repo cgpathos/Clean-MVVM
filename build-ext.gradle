@@ -1,9 +1,9 @@
 ext {
-    kotlin_version = "1.4.31"
-    life_cycle_version = "2.3.0"
-    room_version = "2.3.0-beta02"
-    hilt_version = "2.31.2-alpha"
-    hilt_androidx_version = "1.0.0-alpha03"
+    kotlin_version = "1.5.21"
+    life_cycle_version = "2.3.1"
+    room_version = "2.3.0"
+    hilt_version = "2.38.1"
+    hilt_androidx_version = "1.0.0"
     assisted_inject_version = "0.6.0"
 
     core_testing_version = "2.1.0"
