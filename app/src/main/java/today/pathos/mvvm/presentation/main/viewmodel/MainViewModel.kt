@@ -1,0 +1,31 @@
+package today.pathos.mvvm.presentation.main.viewmodel
+
+import androidx.lifecycle.MutableLiveData
+import dagger.hilt.android.lifecycle.HiltViewModel
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.schedulers.Schedulers
+import today.pathos.mvvm.core.extensions.addTo
+import today.pathos.mvvm.core.presentation.BaseViewModel
+import today.pathos.mvvm.domain.interactors.ColorChipInteractor
+import javax.inject.Inject
+
+@HiltViewModel
+class MainViewModel @Inject constructor(
+    private val colorChipInteractor: ColorChipInteractor,
+    private val mainMapper: MainMapper
+) : BaseViewModel() {
+    internal val viewState = MutableLiveData<MainViewState>()
+
+    fun fetchColorSetList() {
+        colorChipInteractor.getColorSetList()
+            .toObservable()
+            .map<MainViewState> { MainViewState.Success(mainMapper.map(it)) }
+            .onErrorReturn { MainViewState.Error(it.message ?: "Unknown error!!") }
+            .startWithItem(MainViewState.Loading)
+
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe { viewState.value = it }
+            .addTo(disposableBag)
+    }
+}
