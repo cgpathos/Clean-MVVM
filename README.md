@@ -1,4 +1,4 @@
-[![Android release](https://github.com/cgpathos/Clean-MVVM/actions/workflows/android.yml/badge.svg)](https://github.com/cgpathos/Clean-MVVM/actions/workflows/android.yml)
+[![tests](https://github.com/cgpathos/Clean-MVVM/actions/workflows/android.yml/badge.svg)](https://github.com/cgpathos/Clean-MVVM/actions/workflows/test.yml)
 
 # Clean-MVVM
 
