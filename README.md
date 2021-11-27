@@ -1,3 +1,5 @@
+[![tests](https://github.com/cgpathos/Clean-MVVM/actions/workflows/tests.yml/badge.svg)](https://github.com/cgpathos/Clean-MVVM/actions/workflows/tests.yml)
+
 # Clean-MVVM
 
 ## todo : 기존에 잡았던 아키텍쳐 고도화
