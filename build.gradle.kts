@@ -1,20 +1,8 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath("com.android.tools.build:gradle:7.0.3")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.KOTLIN_VERSION}")
-        classpath("com.google.dagger:hilt-android-gradle-plugin:${Version.HILT_VERSION}")
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
+plugins {
+    id("com.android.application") version "7.1.1" apply false
+    id("com.android.library") version "7.1.1" apply false
+    id("org.jetbrains.kotlin.android") version Version.KOTLIN_VERSION apply false
+    id("dagger.hilt.android.plugin") version Version.HILT_VERSION apply false
 }
 
 tasks.register("clean", Delete::class) {

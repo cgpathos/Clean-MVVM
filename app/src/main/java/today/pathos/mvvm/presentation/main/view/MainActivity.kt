@@ -6,6 +6,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import today.pathos.mvvm.R
@@ -15,6 +16,7 @@ import today.pathos.mvvm.presentation.main.viewmodel.MainData
 import today.pathos.mvvm.presentation.main.viewmodel.MainViewModel
 import today.pathos.mvvm.presentation.main.viewmodel.MainViewState
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -22,8 +24,12 @@ class MainActivity : AppCompatActivity() {
         const val TAG = "MainActivity"
     }
 
-    private val viewModel by viewModels<MainViewModel>()
+    @Inject
+    lateinit var mainViewModelFactory: MainViewModel.Factory
 
+    private val viewModel by viewModels<MainViewModel> {
+        MainViewModel.provideFactory(mainViewModelFactory, this.activityResultRegistry)
+    }
     private lateinit var bnd: ActivityMainBinding
     private lateinit var adapter: ColorSetAdapter
 
@@ -55,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                 bnd.listColorSet.visibility = View.VISIBLE
                 adapter.colorSetList = state.colorSetList
             }
-            is MainViewState.Error   -> {
+            is MainViewState.Error -> {
                 bnd.txtLoading.visibility = View.GONE
                 bnd.listColorSet.visibility = View.GONE
                 bnd.txtError.visibility = View.VISIBLE

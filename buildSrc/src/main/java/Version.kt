@@ -1,5 +1,5 @@
 object Version {
-    const val KOTLIN_VERSION = "1.6.0"
+    const val KOTLIN_VERSION = "1.6.10"
     const val HILT_VERSION = "2.38.1"
     const val LIFE_CYCLE_VERSION = "2.4.0"
     const val ROOM_VERSION = "2.3.0"
