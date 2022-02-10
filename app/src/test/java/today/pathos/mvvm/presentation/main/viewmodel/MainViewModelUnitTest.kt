@@ -1,5 +1,6 @@
 package today.pathos.mvvm.presentation.main.viewmodel
 
+import androidx.activity.result.ActivityResultRegistry
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
@@ -20,6 +21,7 @@ class MainViewModelUnitTest {
     @Rule @JvmField val instantExecutorRule = InstantTaskExecutorRule()
     @Rule @JvmField val rxSchedulerRule = RxSchedulerRule()
 
+    @Mock lateinit var activityResultRegistry: ActivityResultRegistry
     @Mock lateinit var interactor: ColorChipInteractor
     @Mock lateinit var observer: Observer<MainViewState>
     @Mock lateinit var lifecycleOwner: LifecycleOwner
@@ -30,7 +32,7 @@ class MainViewModelUnitTest {
     @Before
     fun setUp() {
         lifecycle = LifecycleRegistry(lifecycleOwner)
-        viewModel = MainViewModel(interactor, MainMapper())
+        viewModel = MainViewModel(activityResultRegistry, interactor, MainMapper())
         viewModel.viewState.observeForever(observer)
     }
 
